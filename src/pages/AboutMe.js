@@ -1,9 +1,12 @@
 //Page Components
 import AboutSection from '../components/AboutSection';
-
+import SkillsSection from '../components/SkillsSection';
 const AboutMe = () => {
-    return(
+    return (
+    <>
         <AboutSection/>
+        <SkillsSection/>
+    </>
     );
 }
 
