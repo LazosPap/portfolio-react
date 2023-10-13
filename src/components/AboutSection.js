@@ -1,7 +1,7 @@
 import AboutMe1 from '../img/About Me 1.png';
 //Styled
 import styled from 'styled-components';
-
+import {About,Description,Image,Hide} from "../styles";
 const AboutSection = () => {
     return(
         <About>
@@ -19,43 +19,14 @@ const AboutSection = () => {
                 </div>
                 <p>Contact me for any job suggestions.</p>
                 <button>Contact Me</button>
+                </Description>
                 <Image>
                     <img src={AboutMe1} alt="Web Programming Languages" />
                 </Image>
-            </Description>
         </About>
-    )
+    );
 }
 
 //Styled Components
-const About = styled.div`
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5rem 10rem;
-    color: white;
-`;
-const Description = styled.div`
-    flex: 1;
-    padding-right: 5rem;
-    h2 {
-        font-weight: lighter;
-    }
-`;
-const Image = styled.div`
-    flex: 1;
-    overflow: hidden;
-    img {
-        width: 50%;
-        height: 80vh;
-        object-fit: cover;
-        float: right;
-        border-radius: 50%;
-    }
-`;
-const Hide = styled.div`
 
-    overflow: hidden;
-`;
 export default AboutSection;

@@ -4,10 +4,12 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     background: #1b1b1b;
+    text-align: center;
 }
 
 button {
@@ -37,6 +39,7 @@ h2 {
     span {
         font-weight: bold;
         color: #23d997;
+        
     }
     a {
         font-size: 1.1rem;
@@ -47,6 +50,7 @@ h2 {
         font-size: 1.4rem;
         line-height: 150%;
     }
+
 `
 
 export default GlobalStyle;
