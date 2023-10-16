@@ -12,7 +12,7 @@ export const Description = styled.div`
     flex: 1;
     padding-right: 5rem;
     h2 {
-        font-weight: lighter;
+        font-weight: bold;
     }
 `;
 export const Image = styled.div`
@@ -20,7 +20,7 @@ export const Image = styled.div`
     overflow: hidden;
     img {
         width: 100%;
-        height: 80vh;
+        height: 70vh;
         object-fit: cover;
         border-radius: 50%;
     }
