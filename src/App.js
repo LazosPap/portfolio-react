@@ -6,9 +6,18 @@ import ContactMe from "./pages/ContactMe";
 import Projects from "./pages/Projects";
 //Router
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import React, { createContext } from 'react';
+import { useState } from "react";
+export const ThemeContext = createContext(null);
+  
 function App() {
+    const [theme, setTheme] = useState("dark");
+    const toggleTheme = () => {
+        setTheme((curr) => (curr === "light" ? "dark": "light"));
+    };
   return (
-    <div className="App">
+      <ThemeContext.Provider value={{theme, toggleTheme}}>
+        <div className="App" id={theme}>
       <GlobalStyle/>
       <BrowserRouter>
       <Nav/>
@@ -18,8 +27,11 @@ function App() {
         <Route path="/contact" exact element={<ContactMe/>}/>
       </Routes>
       </BrowserRouter>
-    </div>
+      </div>
+      </ThemeContext.Provider>
+
   );
 }
+
 
 export default App;

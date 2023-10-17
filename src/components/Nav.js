@@ -1,23 +1,32 @@
 import styled from 'styled-components';
 import Logo from '../img/Logo.png';
-import {Link} from'react-router-dom';
-const Nav =  () => {
-    return (
-        <StyledNav>
-            <h1><Link id="logo" to="/"><img src={Logo} id='logo'/></Link></h1>
-            <ul>
-                <li>
-                    <Link to="/">About Me</Link>
-                </li>
-                <li>
-                    <Link to="/projects">Projects</Link>
-                </li>
-                <li>
-                    <Link to="/contact">Contact Me</Link>
-                </li>
-            </ul>
-        </StyledNav>
-    );
+import { Link } from 'react-router-dom';
+import ReactSwitch from "react-switch";
+import { useContext } from 'react'; // Import useContext
+import { ThemeContext } from '../App'; // Import the ThemeContext from the App component
+
+const Nav = () => {
+  // Access theme and toggleTheme from the context
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  return (
+    <StyledNav>
+      <h1><Link id="logo" to="/"><img src={Logo} id='logo' alt="Logo" /></Link></h1>
+      <ul>
+        <li>
+        <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
+        <label> {theme === "light" ? "Light Mode" : "Dark Mode"}</label>
+          <Link to="/">About Me</Link>
+        </li>
+        <li>
+          <Link to="/projects">Projects</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact Me</Link>
+        </li>
+      </ul>
+    </StyledNav>
+  );
 };
 
 const StyledNav = styled.nav`
