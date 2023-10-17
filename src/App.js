@@ -15,21 +15,21 @@ function App() {
     const toggleTheme = () => {
         setTheme((curr) => (curr === "light" ? "dark": "light"));
     };
-  return (
-      <ThemeContext.Provider value={{theme, toggleTheme}}>
-        <div className="App" id={theme}>
-      <GlobalStyle/>
-      <BrowserRouter>
-      <Nav/>
-      <Routes>
-        <Route path="/" exact element={<AboutMe/>}/>
-        <Route path="/projects" exact element={<Projects/>}/>
-        <Route path="/contact" exact element={<ContactMe/>}/>
-      </Routes>
-      </BrowserRouter>
-      </div>
-      </ThemeContext.Provider>
 
+  return (
+    <ThemeContext.Provider value={{theme, toggleTheme}}>
+      <div className="main" id={theme}>
+        <GlobalStyle/>
+        <BrowserRouter>
+        <Nav/>
+        <Routes>
+          <Route path="/" exact element={<AboutMe/>}/>
+          <Route path="/projects" exact element={<Projects/>}/>
+          <Route path="/contact" exact element={<ContactMe/>}/>
+        </Routes>
+        </BrowserRouter>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

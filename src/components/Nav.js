@@ -10,12 +10,12 @@ const Nav = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <StyledNav>
+    <StyledNav className='navme'>
       <h1><Link id="logo" to="/"><img src={Logo} id='logo' alt="Logo" /></Link></h1>
       <ul>
-        <li>
+      <label> {theme === "light" ? "Light Mode" : "Dark Mode"}</label>
         <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
-        <label> {theme === "light" ? "Light Mode" : "Dark Mode"}</label>
+        <li>
           <Link to="/">About Me</Link>
         </li>
         <li>
@@ -38,7 +38,6 @@ const StyledNav = styled.nav`
     padding: 1rem 10rem;
     background-color: #282828;
     a {
-        color: white;
         text-decoration:none;
     }
     ul {

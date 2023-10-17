@@ -5,12 +5,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    
 }
 
 body {
-
     text-align: center;
+    color: white;
 }
 
 button {
@@ -27,18 +26,28 @@ button {
         color:white;
     }
 }
-#light {
-    * {
-        background-color: white;
-        color: black;
-    }
+#light{
+    color: black;
     span {
         color: #23D997;
+    }
+    button {
+        color: black;
+    }
+    .navme {
+        background-color: lightgray;
+        a {
+            color: black;
+        }
     }
 }
 #dark {
     background-color: #1b1b1b;
+        a {
+            color: white;
+        }
 }
+
 h2 {
         font-weight: lighter;
         font-size: 4rem;
